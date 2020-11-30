@@ -34,8 +34,12 @@ class RomanNumeral
             if ($data[$numbers[$x]] == 0) {
                 throw new InvalidNumeral();
             }
+            if ($data[$numbers[$x]] < $data[$numbers[$x + 1]]) {
+                $total -= $data[$numbers[$x]];
+            } else {
+                $total += $data[$numbers[$x]];
+            }
         }
-
-        // return $total;
+        return $total;
     }
 }
