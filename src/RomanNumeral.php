@@ -25,10 +25,17 @@ class RomanNumeral
      *
      * @throws InvalidNumeral on failure (when a numeral is invalid)
      */
-    public function toInt():int
+    public function toInt()
     {
         $total = 0;
+        $data = ['M' => 1000, 'D' => 500, 'C' => 100, 'L' => 50, 'X' => 10, 'V' => 5, 'I' => 1];
+        $numbers = str_split($this->numeral, 1);
+        for ($x = 0; $x < count($numbers); $x++) {
+            if ($data[$numbers[$x]] == 0) {
+                throw new InvalidNumeral();
+            }
+        }
 
-        return $total;
+        // return $total;
     }
 }
