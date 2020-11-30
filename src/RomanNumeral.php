@@ -39,7 +39,7 @@ class RomanNumeral
         for ($x = 0; $x < count($numbers); $x++) {
 
             // throw exception if $data[$numbers[$x]] is not a valid numeral
-            if ($data[$numbers[$x]] == 0) {
+            if (!isset($data[$numbers[$x]])) {
                 throw new InvalidNumeral();
             }
 
